@@ -1,0 +1,25 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Aug 16 09:36:17 2017
+
+@author: shimizu
+"""
+
+from bs4 import BeautifulSoup
+
+html = """
+<html><body>
+    <h1 id = "title">スクレイピングとは</h1>
+    <p id="body">Webページから任意のデーターを抽出すること</p>
+</body></html>
+"""
+
+soup = BeautifulSoup(html,'html.parser')
+
+title = soup.find(id="title")
+body = soup.find(id = "body")
+
+
+
+print("title:" + title.string)
+print("body:" + body.string)
